@@ -1,0 +1,338 @@
+.App {
+    // background: linear-gradient(120deg, #000000, #FFAD62);
+    background: linear-gradient(120deg, #000000, #666262);
+    // font-family: montserra;
+    font-family: "Montserrat";
+
+    .navbar {
+        padding: 16px 0px 16px 150px;
+        background-color: black;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+           
+
+        .logo {
+            width: 170px;
+        }
+
+        .top-cta {
+            width: 220px;
+            position: absolute;
+            margin-left: calc(100vw - 670px);
+            cursor: pointer;
+        }
+
+        .m-number {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .m-statement {
+            color: white;
+            opacity: 0.8;
+            font-style: italic;
+        }
+    }
+
+    .banner-section {
+        
+        display: flex;
+        padding-top: 100px;
+        justify-content: space-around;
+    
+        .banner {
+            text-align: center;
+            margin-top: 60px;
+            width: 600px;
+
+            img {
+                width: 440px;
+                height: 450px;
+            }
+    
+            .tagline {
+                font-weight: bold;
+                font-size: 2rem;
+                margin-top: 30px;
+            }
+        }
+    
+        .banner-content {
+            width: 600px;
+            text-align: left;
+            margin-top: 80px;
+    
+            font-size: 2rem;
+            font-weight: bold;
+            word-spacing: 1.3;
+            line-height: 1.4;
+            color: white;
+
+            .content-box {
+                height: 100px;
+            }
+    
+            .header {
+                font-size: 2.5rem;            
+            }
+    
+            .sub-header {
+               margin-top: 50px;
+               opacity: 0.8;
+               font-weight: 500;
+            }
+    
+            .cta {
+                margin-top: 40px;
+                img {
+                    width: 350px;
+                    cursor: pointer;
+                }
+            }
+        }
+    
+    }
+    
+    .value-props {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 120px;
+    
+        .woman {
+            width: 450px;
+        }
+    
+        .man {
+            width: 450px;
+        }
+    }
+
+    .matches {
+        display: flex;
+        justify-content: space-evenly;
+        // background-color: #111111;
+        padding: 80px 0;
+        margin-top: 120px;
+
+        img {
+            width: 350px;
+        }
+    }
+
+    .users {
+        text-align: center;
+        color: white;
+        background-color: #111111;
+        font-weight: 400;
+        padding: 60px 0;
+        word-spacing: 3px;
+        margin-top: 120px;
+
+        img {
+            width: 350px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .head {
+            font-size: 2.5rem;
+            .bold {
+                font-weight: bold;
+            }
+        }
+
+        .sub-head {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            opacity: 0.8;
+            .bold {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .security {
+        text-align: center;
+        margin-top: 150px;
+
+        img {
+            width: 900px;
+        }
+    }
+
+    .messaging {
+        text-align: center;
+        margin-top: 150px;
+        padding-bottom: 80px;
+
+        img {
+            width: 900px;
+        }
+    }
+}
+
+
+
+.fallback {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(120deg, #000000, #666262);
+    text-align: center;
+    color: #f5eded;
+
+    .header {    
+        font-weight: bold;
+        padding-top: 300px;
+        opacity: 0.9;
+        font-size: 2rem;
+    }
+
+    .sub-header {        
+        opacity: 0.7;
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-top: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .App {
+        width: 100vw;
+        .navbar {
+            // text-align: center;
+            background-color: black;
+            position: fixed;
+            width: 100vw;
+            // display: flex;
+            // justify-content: space-around;
+            // align-items: center;
+            padding: 12px 0;
+            vertical-align: middle;
+            .logo {
+                width: 90px;
+                margin-left: 30px;
+            }
+
+            .top-cta {
+                width: 160px;
+                margin-left: calc(100vw - 310px);
+                position: absolute;
+                top: 9px;
+            }
+        }
+
+        .banner-section {
+            display: block;
+            padding-top: 10px;
+            .banner {
+                width: 100%;
+                margin-top: 80px;
+                img {
+                    width: 72%;
+                    height: 68%;
+                }
+            }
+
+            .banner-content {
+                width: 80%;
+                color: white;
+                text-align: center;
+                margin-top: 30px;
+                font-size: 1rem;
+                margin-left: 10%;
+
+                .content-box {
+                    height: 70px;
+                }
+
+                .header {
+                    font-size: 1.5rem;
+                }
+
+                .sub-header {
+                    margin-top: 20px;
+                }
+
+                .cta {
+                    margin-top: 30px;
+                    // position: fixed;
+                    // bottom: 20px;
+                    // left: calc((100vw - 200px)/2);
+                    img {
+                        width: 250px;
+                        box-shadow: 1px 1px 30px 1px #444444;
+                    }
+                }
+            }
+        }
+
+        .value-props {
+            display: block;
+            text-align: center;
+            margin-top: 60px;
+
+            .woman {
+                width: 100%;
+                img {
+                    width: 70%;
+                }
+            }
+
+            .man {
+                width: 100%;
+                margin-top: 10px;
+                img {
+                    width: 70%;
+                }
+            }
+        }
+
+        .matches {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+
+            img {
+                width: 200px;
+                margin-top: 30px;
+            }
+        }
+
+        .users {
+            padding: 30px 0;
+            margin-top: 30px;
+
+            img {
+                width: 200px;
+            }
+
+            .head {
+                font-size: 1.3rem;
+            }
+
+            .sub-head {
+                font-size: 1rem;
+                margin-top: 15px;
+            }
+        }
+
+        .security {
+            margin-top: 80px;
+            img {
+                width: 90%;
+            }
+        }
+
+        .messaging {
+            margin-top: 80px;
+            img {
+                width: 90%;
+            }
+        }
+    }
+}
+
