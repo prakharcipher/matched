@@ -101,7 +101,7 @@ class App extends Component {
   render() {
     return (
       <div>
-          { this.state.isAuthorized ? <div className="App">
+          { !this.state.isAuthorized ? <div className="App">
           <div className="navbar">
             <img className="logo" alt="logo" src={logo} />
             <img className="top-cta" alt="old-cta" src={cta_old} />
