@@ -68,7 +68,8 @@ class App extends Component {
       const data = {
         firstName: _.get(profile,'localizedFirstName',''),
         lastName: _.get(profile,'localizedLastName',''),
-        profileURL: `https://www.linkedin.com/in/${_.get(profile,'vanityName','')}`
+        profileURL: `https://www.linkedin.com/in/${_.get(profile,'vanityName','')}`,
+        pictureURL: _.get(_.last(_.get(profile,'profilePicture.displayImage~.elements','')),'identifiers[0].identifier','')
       };
 
       axios.post('https://sheet.best/api/sheets/c9e1c8ee-f7e0-4420-9a26-98771f754328', data).then((response) => {
@@ -77,7 +78,7 @@ class App extends Component {
   }
 
   requestProfile = () => {
-    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77gspit1p6df5f&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=https://matched.social/callback`
+    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77gspit1p6df5f&scope=r_fullprofile&state=123456&redirect_uri=https://matched.social/callback`
     var width = 450,
       height = 730,
       left = window.screen.width / 2 - width / 2,
@@ -100,7 +101,7 @@ class App extends Component {
 
   render() {
     ReactGA.initialize('G-9Y4013X62Q');
-    ReactGA.pageview(document.location.pathname);
+    ReactGA.send({ hitType: "pageview", page: document.location.pathname });
     return (
       <div>
           { !this.state.isAuthorized ? <div className="App">

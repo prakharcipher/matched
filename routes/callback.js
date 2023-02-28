@@ -39,7 +39,7 @@ function requestAccessToken(code,state) {
 }
 
 function requestProfile(token) {  
-  return request.get('https://api.linkedin.com/v2/me?projection=(id,localizedFirstName,localizedLastName,profilePicture(displayImage~digitalmediaAsset:playableStreams))')
+  return request.get('https://api.linkedin.com/v2/me?projection=(vanityName)')
   .set('Authorization', `Bearer ${token}`)
 }
 
