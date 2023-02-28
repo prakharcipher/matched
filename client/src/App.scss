@@ -1,7 +1,5 @@
 .App {
-    // background: linear-gradient(120deg, #000000, #FFAD62);
     background: linear-gradient(120deg, #000000, #666262);
-    // font-family: montserra;
     font-family: "Montserrat";
 
     .navbar {
@@ -203,13 +201,9 @@
     .App {
         width: 100vw;
         .navbar {
-            // text-align: center;
             background-color: black;
             position: fixed;
             width: 100vw;
-            // display: flex;
-            // justify-content: space-around;
-            // align-items: center;
             padding: 12px 0;
             vertical-align: middle;
             .logo {
@@ -259,12 +253,9 @@
 
                 .cta {
                     margin-top: 30px;
-                    // position: fixed;
-                    // bottom: 20px;
-                    // left: calc((100vw - 200px)/2);
                     img {
                         width: 250px;
-                        box-shadow: 1px 1px 30px 1px #444444;
+                        box-shadow: 1px 1px 20px 1px #444444;
                     }
                 }
             }
@@ -332,6 +323,24 @@
             img {
                 width: 90%;
             }
+        }
+    }
+
+    .fallback {
+
+        .header {    
+            font-weight: bold;
+            padding: 200px 15px 0 15px;
+            opacity: 0.9;
+            font-size: 1.2rem;
+        }
+    
+        .sub-header {        
+            opacity: 0.7;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0 15px;
+            margin-top: 50px;
         }
     }
 }

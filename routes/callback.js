@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
   .then((response) => {
     requestProfile(response.body.access_token)
     .then(response => {
-      console.log(response.body)
       res.render('callback', { profile: response.body});
     })
   })
@@ -39,7 +38,7 @@ function requestAccessToken(code,state) {
     .send(`state=${state}`)
 }
 
-function requestProfile(token) {
+function requestProfile(token) {  
   return request.get('https://api.linkedin.com/v2/me?projection=(id,localizedFirstName,localizedLastName,profilePicture(displayImage~digitalmediaAsset:playableStreams))')
   .set('Authorization', `Bearer ${token}`)
 }

@@ -5,23 +5,21 @@ import "react-s-alert/dist/s-alert-css-effects/slide.css";
 
 import React, { Component } from "react";
 
-import security from './security.png';
-import banner from './banner.png';
+import security from './images/security.png';
+import banner from './images/banner.png';
 import axios from 'axios';
-import real from './real.png';
-import match1 from './match1.png';
-import match2 from './match2.png';
-import match3 from './match3.png';
-import cta from './cta.png';
-import cta_old from './cta_old.png';
-import message from './message.png';
-import logo from './logo.png';
-import mValue from './mValue.png';
-import wValue from './wValue.png';
+import match1 from './images/match1.png';
+import match2 from './images/match2.png';
+import match3 from './images/match3.png';
+import cta from './images/cta.png';
+import cta_old from './images/cta_old.png';
+import message from './images/message.png';
+import ReactGA from 'react-ga4';
+import logo from './images/logo.png';
+import mValue from './images/mValue.png';
+import wValue from './images/wValue.png';
 import { TxtType } from "./utils/utils";
 import Alert from "react-s-alert";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import ProfileCard from "./components/ProfileCard";
 import _ from 'lodash';
 
 class App extends Component {
@@ -36,7 +34,9 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  
+
+  componentDidMount() {    
     window.addEventListener('message', this.handlePostMessage);
     var elements = document.getElementsByClassName("typewrite");
     for (var i = 0; i < elements.length; i++) {
@@ -77,7 +77,7 @@ class App extends Component {
   }
 
   requestProfile = () => {
-    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77gspit1p6df5f&scope=r_liteprofile&state=123456&redirect_uri=https://matched.social/callback`
+    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77gspit1p6df5f&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=https://matched.social/callback`
     var width = 450,
       height = 730,
       left = window.screen.width / 2 - width / 2,
@@ -99,12 +99,14 @@ class App extends Component {
 
 
   render() {
+    ReactGA.initialize('G-9Y4013X62Q');
+    ReactGA.pageview(document.location.pathname);
     return (
       <div>
           { !this.state.isAuthorized ? <div className="App">
           <div className="navbar">
             <img className="logo" alt="logo" src={logo} />
-            <img className="top-cta" alt="old-cta" src={cta_old} />
+            <img className="top-cta" onClick={this.requestProfile} alt="old-cta" src={cta_old} />
           </div>
           <div className="banner-section">
             <div className="banner">
