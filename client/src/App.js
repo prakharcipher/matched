@@ -5,10 +5,18 @@ import "react-s-alert/dist/s-alert-css-effects/slide.css";
 
 import React, { Component } from "react";
 import Popup from 'reactjs-popup';
+import {Carousel} from '3d-react-carousal';
 import 'reactjs-popup/dist/index.css';
 
 import security from './images/security.png';
-import banner from './images/banner.png';
+import p1 from './images/p1.png';
+import p2 from './images/p2.png';
+import p3 from './images/p3.png';
+import p4 from './images/p4.png';
+import p5 from './images/p5.png';
+import p6 from './images/p6.png';
+import p7 from './images/p7.png';
+import p8 from './images/p8.png';
 import axios from 'axios';
 import match1 from './images/match1.png';
 import match2 from './images/match2.png';
@@ -102,6 +110,12 @@ class App extends Component {
   };
 
   handleMan = () => {
+
+    ReactGA.event({
+      category: "Male",
+      action: "clicked"
+    });
+
     const data = {
       gender: 'Male'
     };
@@ -115,6 +129,12 @@ class App extends Component {
   }
 
   handleWoman = () => {
+
+    ReactGA.event({
+      category: "Female",
+      action: "clicked"
+    });
+
     const data = {
       gender: 'Female'
     };
@@ -136,6 +156,10 @@ class App extends Component {
     });
   }
 
+  callback = (index) => {
+    console.log("callback",index);
+  }
+
 
   render() {
     ReactGA.initialize('G-9Y4013X62Q');
@@ -153,11 +177,11 @@ class App extends Component {
           </div>
           <div className="banner-section">
             <div className="banner">
-              <img alt="banner" src={banner} />            
+              <Carousel arrows={false} slides={[<img alt="match1" src={p1} />, <img alt="match2" src={p2} />, <img alt="match3" src={p3} />, <img alt="match3" src={p4} />, <img alt="match3" src={p5} />, <img alt="match3" src={p6} />, <img alt="match3" src={p7} />, <img alt="match3" src={p8} />]} autoplay={true} interval={2000} onSlideChange={this.callback}/>
             </div>
             <div className="banner-content">
               {/* <div className="header">Use LinkedIn for match-making</div> */}
-              <div className="header">Ditch random swiping and old-school matrimony with Linkedin</div>
+              <div className="header">Ditch random swiping and make matches with vetted Linkedin profiles</div>
               <div className="content-box">
                 <div className="sub-header">Find your soulmate with similar</div>
                 <div
@@ -185,6 +209,7 @@ class App extends Component {
             <img alt="match3" src={match3} />
           </div>
           <div className="users">
+            <div className="elite">India's 1st <b>elite match-making</b> platform</div>
             <div className="head"><span className="bold">Match</span> with <span className="bold">top 1%</span> professionals</div>
             <div className="sub-head"><span className="bold">1000+</span> members already on-board</div>
             <img onClick={this.handleCtaClick} alt="cta" src={cta} />
