@@ -1,6 +1,20 @@
 .App {
     background: linear-gradient(120deg, #000000, #666262);
     font-family: "Montserrat";
+    height: 100vh;
+
+    .alert {
+        width: 60%;
+        background-color: green;
+        color: white;
+        font-weight: 500;
+        text-align: center;
+        position: fixed;
+        bottom: 30px;
+        left: 20%;
+        padding: 10px;
+        border-radius: 12px;
+    }
 
     .navbar {
         padding: 16px 0px 16px 150px;
@@ -11,26 +25,7 @@
            
 
         .logo {
-            width: 170px;
-        }
-
-        .top-cta {
-            width: 220px;
-            position: absolute;
-            margin-left: calc(100vw - 670px);
-            cursor: pointer;
-        }
-
-        .m-number {
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .m-statement {
-            color: white;
-            opacity: 0.8;
-            font-style: italic;
+            width: 150px;
         }
     }
 
@@ -43,10 +38,22 @@
         .banner {
             text-align: center;
             margin-top: 60px;
-            width: 600px;
+            width: 700px;
+
+            .react-3d-carousel {
+                .slider-container {
+                    .slider-content {
+                        .slider-single {
+                            .slider-single-content {
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }   
 
             img {
-                height: 450px;
+                height: 480px;
             }
     
             .tagline {
@@ -59,7 +66,7 @@
         .banner-content {
             width: 600px;
             text-align: left;
-            margin-top: 80px;
+            margin-top: 160px;
     
             font-size: 2rem;
             font-weight: bold;
@@ -72,7 +79,7 @@
             }
     
             .header {
-                font-size: 2.5rem;            
+                font-size: 2.8rem;            
             }
     
             .sub-header {
@@ -83,9 +90,49 @@
     
             .cta {
                 margin-top: 40px;
+
+                .question {
+                    font-size: 28px;
+                    font-weight: 400;
+                    margin-bottom: 20px;
+                   
+                }
+
+                .action {
+                    display: flex;
+
+                    .go {
+                        background-color: black;
+                        padding: 8px 16px;
+                        border-bottom-right-radius: 8px;
+                        border-top-right-radius: 8px;
+                        border: 1px solid white;
+                        cursor: pointer;
+                    }
+                }
                 img {
                     width: 350px;
+                    margin-top: 20px;
                     cursor: pointer;
+                }
+
+                .in_field {
+                    padding: 18px 12px;
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    width: 60%;
+                    background-color: #fefefe;
+                    border: 1px solid white;
+                    border: none;
+                }
+
+                input::placeholder {
+                    // font-weight: bold;
+                    font-style: italic;
+                    font-size: 16px;
+                    opacity: 0.8;
+                    
+                    box-sizing: border-box;
                 }
             }
         }
@@ -206,15 +253,23 @@
     
     .App {
         width: 100vw;
+
+        .alert {
+            width: 80%;
+            left: 10%;
+            font-size: 12px;
+        }
+
         .navbar {
             background-color: black;
             position: fixed;
             width: 100vw;
             padding: 12px 0;
             vertical-align: middle;
+            display: flex;
+            justify-content: center;
             .logo {
-                width: 90px;
-                margin-left: 30px;
+                width: 90px;                
             }
 
             .top-cta {
@@ -232,8 +287,8 @@
                 width: 100%;
                 margin-top: 80px;
                 img {
-                    width: 72%;
-                    height: 68%;
+                    width: 80%;
+                    height: 74%;
                 }
             }
 
@@ -250,7 +305,7 @@
                 }
 
                 .header {
-                    font-size: 1.3rem;
+                    font-size: 1.5rem;
                 }
 
                 .sub-header {
@@ -259,9 +314,28 @@
 
                 .cta {
                     margin-top: 30px;
-                    img {
-                        width: 250px;
-                        box-shadow: 1px 1px 20px 1px #444444;
+
+                    .question {
+                        font-size: 1.3rem;
+                    }
+
+                    .in_field {
+                        padding: 14px 10px;
+                        border-top-left-radius: 8px;
+                        border-bottom-left-radius: 8px;
+                        width: 60%;
+                        background-color: #fefefe;
+                        border: 1px solid white;
+                        border: none;
+                    }
+    
+                    input::placeholder {
+                        // font-weight: bold;
+                        font-style: italic;
+                        font-size: 12px;
+                        opacity: 0.8;
+                        
+                        box-sizing: border-box;
                     }
                 }
             }
